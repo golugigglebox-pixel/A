@@ -110,3 +110,53 @@
 .section-title {
   margin: 10px 0 5px;
 }
+
+/* ---------- Product Page Title ---------- */
+.page-title {
+  font-size: 22px;
+  font-weight: 600;
+  margin: 10px;
+}
+
+/* ---------- Product List ---------- */
+.product-list {
+  padding: 10px;
+}
+
+/* ---------- Product Card ---------- */
+.product-card {
+  background: #ffffff;
+  padding: 12px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.product-img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.product-name {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 5px 0;
+}
+
+.product-price,
+.product-profit {
+  margin: 3px 0;
+  color: #444;
+}
+
+.buy-btn {
+  width: 100%;
+  background: dodgerblue;
+  color: #fff;
+  padding: 10px;
+  font-size: 15px;
+  border-radius: 8px;
+  border: none;
+  margin-top: 10px;
+}
