@@ -1,0 +1,16 @@
+<script type="module">
+  import { userLogin } from "./assets/js/auth.js";
+
+  document.getElementById("loginBtn").addEventListener("click", async () => {
+    let email = document.getElementById("email").value;
+    let pass = document.getElementById("password").value;
+
+    const res = await userLogin(email, pass);
+
+    if (res.status) {
+      window.location.href = "home.html";
+    } else {
+      alert(res.message);
+    }
+  });
+</script>
