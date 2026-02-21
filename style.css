@@ -54,3 +54,59 @@
 .section-title {
   margin: 10px 0 5px;
 }
+/* ---------- Banner Slider ---------- */
+.banner-slider {
+  width: 100%;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+.banner-img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+/* ---------- Quick Actions ---------- */
+.quick-actions {
+  display: flex;
+  justify-content: space-between;
+  margin: 15px 0;
+}
+.quick-actions button {
+  flex: 1;
+  margin: 0 5px;
+  padding: 12px;
+  background: dodgerblue;
+  color: white;
+  border: none;
+  border-radius: 8px;
+}
+
+/* ---------- New Arrivals ---------- */
+.new-arrivals {
+  display: flex;
+  overflow-x: auto;
+}
+.arrival-card {
+  width: 120px;
+  margin-right: 10px;
+  border-radius: 8px;
+  background: #f1f1f1;
+  padding: 8px;
+  text-align: center;
+}
+.arrival-img {
+  width: 100%;
+  border-radius: 6px;
+}
+
+/* ---------- Live Ticker ---------- */
+.live-ticker {
+  background: #ffe8b3;
+  padding: 8px;
+  border-radius: 8px;
+  margin: 10px 0;
+}
+.section-title {
+  margin: 10px 0 5px;
+}
