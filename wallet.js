@@ -119,3 +119,37 @@ export async function saveWalletHistory(uid, type, amount, message) {
 
   return true;
     }
+<script type="module">
+import { addBalanceRequest } from "./assets/js/wallet.js";
+
+document.getElementById("rechargeBtn").onclick = async () => {
+  let amount = document.getElementById("amount").value;
+  let screenshotURL = "UPLOAD_URL"; 
+
+  await addBalanceRequest(localStorage.getItem("uid"), amount, screenshotURL);
+
+  alert("Recharge request sent!");
+};
+</script>
+<script type="module">
+import { buyProduct } from "./assets/js/wallet.js";
+
+document.getElementById("buyNow").onclick = async () => {
+  let productId = "PRODUCT123";
+  let price = 500;
+
+  const res = await buyProduct(localStorage.getItem("uid"), productId, price);
+
+  if (res.status) {
+    alert("Purchase successful!");
+  } else {
+    alert(res.message);
+  }
+};
+</script>
+<script type="module">
+import { saveWalletHistory } from "./assets/js/wallet.js";
+
+saveWalletHistory("USER_ID", "credit", 200, "Admin Added Balance");
+</script>
+
