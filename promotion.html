@@ -1,0 +1,35 @@
+<h2 class="page-title">Promotion</h2>
+
+<div class="promo-box">
+
+  <!-- 📌 Referral Count -->
+  <div class="promo-section">
+    <h3>Total Referrals</h3>
+    <p id="referral-count" class="promo-value">0</p>
+  </div>
+
+  <!-- 📌 Become Promoter -->
+  <div class="promo-section">
+    <button class="promoter-btn" onclick="becomePromoter()">Become a Promoter</button>
+  </div>
+
+  <!-- 📌 Commission Info -->
+  <p class="commission-text">
+    Earn <b>20% commission</b> from each referral who joins using your link.
+  </p>
+
+  <!-- 📌 Referral Link -->
+  <div class="promo-section">
+    <h3>Your Referral Link</h3>
+    <p id="referral-link" class="ref-link-box">Loading...</p>
+    <button class="copy-btn" onclick="copyReferralLink()">Copy Link</button>
+  </div>
+
+  <!-- 📌 Leaderboard -->
+  <h3 class="leaderboard-title">Top Promoters</h3>
+  <div id="leaderboard-list" class="leaderboard"></div>
+
+</div>
+
+<script src="../app/promotion.js"></script>
+
