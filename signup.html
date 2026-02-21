@@ -1,0 +1,17 @@
+<script type="module">
+  import { userSignup } from "./assets/js/auth.js";
+
+  document.getElementById("signupBtn").addEventListener("click", async () => {
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let pass = document.getElementById("password").value;
+
+    const res = await userSignup(name, email, pass);
+
+    if (res.status) {
+      window.location.href = "home.html";
+    } else {
+      alert(res.message);
+    }
+  });
+</script>
