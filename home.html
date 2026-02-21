@@ -40,3 +40,57 @@
 </div>
 
 <script src="../app/home.js"></script>
+<script type="module">
+import {
+  loadUserSummary,
+  loadHomeNewArrivals,
+  dailyCheckIn,
+  loadLiveTransactions
+} from "./assets/js/home.js";
+
+import { checkLogin } from "./assets/js/auth.js";
+
+checkLogin(async (logged, user) => {
+  if (!logged) {
+    window.location.href = "login.html";
+    return;
+  }
+
+  const uid = user.uid;
+
+  // Load User Summary
+  await loadUserSummary(uid);
+
+  // Load New Arrivals
+  await loadHomeNewArrivals();
+
+  // Load Live Transactions
+  await loadLiveTransactions();
+
+  // Daily Check-in Button Logic
+  document.getElementById("checkInBtn").onclick = async () => {
+    let res = await dailyCheckIn(uid);
+
+    if (res.status) {
+      alert("Check-in Successful! +₹10 added.");
+      loadUserSummary(uid);
+    } else {
+      alert(res.message);
+    }
+  };
+
+  // Navigation Buttons
+  document.getElementById("rechargeBtn").onclick = () => {
+    window.location.href = "recharge.html";
+  };
+
+  document.getElementById("withdrawBtn").onclick = () => {
+    window.location.href = "withdraw.html";
+  };
+
+  document.getElementById("referralBtn").onclick = () => {
+    window.location.href = "promotion.html";
+  };
+
+});
+           </script>
