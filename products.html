@@ -1,3 +1,25 @@
+<h2>Products</h2>
+<div id="product-list"></div>
+
+<script>
+db.ref("products").on("value", snap => {
+  let html = "";
+  snap.forEach(p => {
+    let item = p.val();
+    html += `
+      <div class='product-card'>
+        <img src='${item.image}'/>
+        <h3>${item.name}</h3>
+        <p>Price: ₹${item.price}</p>
+        <p>Daily Profit: ₹${item.dailyProfit}</p>
+        <p>Total Profit: ₹${item.totalProfit}</p>
+        <button onclick="buyProduct('${p.key}', ${item.price})">Buy Now</button>
+      </div>
+    `;
+  });
+  document.getElementById("product-list").innerHTML = html;
+});
+</script>
 <h2 class="page-title">Products</h2>
 
 <div id="product-list" class="product-list">
